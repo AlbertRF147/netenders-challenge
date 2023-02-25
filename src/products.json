@@ -1,0 +1,28 @@
+[
+  {
+    "id": "1",
+    "name": "Fjallraven - Foldsack No. 1 Backpack, Fits 15 Laptops",
+    "image": "https://fakestoreapi.com/img/81fPKd-2AYL._AC_SL1500_.jpg",
+    "colors": [
+      {
+        "name": "Passion red",
+        "color": "#ed2d2d"
+      },
+      {
+        "name": "Mystic blue",
+        "color": "#2d7ded"
+      },
+      {
+        "name": "Always appealing orange",
+        "color": "#ed702d"
+      },
+      {
+        "name": "Serious black",
+        "color": "#1c1b1b"
+      }
+    ],
+    "price": 78.55,
+    "stock": 100,
+    "sizes": ["s", "m", "l", "xl", "2xl", "3xl", "4xl"]
+  }
+]

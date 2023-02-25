@@ -1,0 +1,46 @@
+.product-colors {
+  border: 1px solid lightgrey;
+  border-radius: 6px;
+  margin-bottom: 20px;
+
+  &__dropdown {
+    display: flex;
+    padding: 0 10px;
+    align-items: center;
+
+    &.expanded {
+      border-bottom: 1px solid lightgray;
+    }
+
+    .selected-color {
+      height: 15px;
+      width: 15px;
+    }
+
+    .label {
+      font-size: 20px;
+      margin-left: 10px;
+    }
+    .icon {
+      margin-left: auto;
+    }
+  }
+
+  &__list {
+    .color {
+      display: flex;
+      align-items: center;
+      margin: 10px;
+
+      .circle {
+        height: 30px;
+        width: 30px;
+      }
+
+      .label {
+        font-size: 18px;
+        margin-left: 15px;
+      }
+    }
+  }
+}
