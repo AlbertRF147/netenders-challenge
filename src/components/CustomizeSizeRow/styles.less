@@ -1,0 +1,46 @@
+.size-row {
+  display: flex;
+  align-items: center;
+  border-bottom: 1px dashed lightgray;
+  justify-content: space-between;
+  padding: 10px 15px;
+  height: 40px;
+
+  &--last {
+    border-bottom: none;
+  }
+
+  &__label {
+    font-size: 20px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  &__quantity {
+    display: flex;
+    align-items: center;
+    height: 90%;
+    border: 1px solid lightgray;
+    border-radius: 5000px;
+    overflow: hidden;
+
+    .quantity {
+      width: 20px;
+      text-align: center;
+    }
+
+    .quantity,
+    .decrease-button,
+    .increase-button {
+      margin: 0 4px;
+    }
+
+    .decrease-button,
+    .increase-button {
+      background-color: white;
+      height: 35px;
+      width: 30px;
+      border: none;
+    }
+  }
+}

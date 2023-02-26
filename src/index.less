@@ -1,6 +1,7 @@
-
 :root {
   --color-dark-light: rgb(36, 36, 36);
+  --color-blue-button: #2c4e88;
+  --shadow-button-bottom: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -13,7 +14,8 @@
   -webkit-text-size-adjust: 100%;
 }
 
-html, body {
+html,
+body {
   margin: 0;
 }
 
@@ -24,4 +26,9 @@ a {
 }
 a:hover {
   color: #535bf2;
+}
+
+.disabled {
+  opacity: 0.4;
+  pointer-events: disabled;
 }

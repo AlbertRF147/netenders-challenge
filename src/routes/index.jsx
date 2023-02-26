@@ -13,8 +13,9 @@ const routes = [
     loader: productLoader,
   },
   {
-    path: '/customize',
+    path: '/customize/:id/:colorName',
     element: <Customize />,
+    loader: productLoader,
   },
 ]
 
