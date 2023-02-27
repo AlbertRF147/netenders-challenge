@@ -1,7 +1,7 @@
 import React from 'react'
 import { useLoaderData, useParams } from 'react-router-dom'
-import Page from '../components/Page'
-import ProductCustomization from '../components/ProductCustomization'
+import Page from '../components/Page/Page.jsx'
+import ProductCustomization from '../components/ProductCustomization/ProductCustomization.jsx'
 
 function Customize() {
   const { colorName } = useParams()

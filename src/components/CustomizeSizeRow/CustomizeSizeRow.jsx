@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMinus, faPlus } from '@fortawesome/free-solid-svg-icons'
-import './styles.less'
+import './CustomizeSizeRow.less'
 
 function CustomizeSizeRow(props) {
   const { size, customSize, setCustomSize, isLast } = props

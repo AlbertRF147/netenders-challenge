@@ -1,4 +1,10 @@
 .page {
-  margin: 20px;
-  overflow: hidden;
+  position: relative;
+  padding: 20px;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  max-height: calc(
+    100% - (var(--height-button-bottom) - var(--padding-page)) * 2 -
+      var(--height-navbar) - 15px // bottom margin
+  );
 }

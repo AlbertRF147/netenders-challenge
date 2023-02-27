@@ -2,6 +2,10 @@
   --color-dark-light: rgb(36, 36, 36);
   --color-blue-button: #2c4e88;
   --shadow-button-bottom: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  --padding-button-bottom: 20px;
+  --height-navbar: 55px;
+  --padding-page: 20px;
+  --height-button-bottom: 60px;
 
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -12,6 +16,10 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+}
+
+#root {
+  height: 100vh;
 }
 
 html,
@@ -30,5 +38,13 @@ a:hover {
 
 .disabled {
   opacity: 0.4;
-  pointer-events: disabled;
+  pointer-events: none;
+}
+
+.full-height {
+  max-height: 100%;
+}
+
+.error {
+  color: red;
 }

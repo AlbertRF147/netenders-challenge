@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
-import './productColors.less'
+import './ProductColors.less'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCaretUp, faCaretDown } from '@fortawesome/free-solid-svg-icons'
 
 function ProductColors(props) {
-  const { colors, color, setColor } = props
+  const { colors, color, setColor, error, setError } = props
   const [expanded, setExpanded] = useState(false)
 
   const handleOnExpandClick = () => {
-    setExpanded((prev) => setExpanded(!prev))
+    setExpanded((prev) => !prev)
+    setError(null)
   }
 
   const handleSelectColor = (color) => {
@@ -22,11 +23,13 @@ function ProductColors(props) {
         className={`product-colors__dropdown ${expanded ? 'expanded' : ''}`}
         onClick={handleOnExpandClick}
       >
-        <div
-          className='selected-color'
-          style={{ background: color.color || 'unset' }}
-        />
-        <div className='label'>
+        {color.name && (
+          <div
+            className='selected-color'
+            style={{ background: color.color || 'unset' }}
+          />
+        )}
+        <div className={`label ${error ? 'error' : ''}`}>
           {!color.name ? 'Select a color:' : color.name}
         </div>
         <div className='icon'>

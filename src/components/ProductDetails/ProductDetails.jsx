@@ -1,8 +1,8 @@
 import React from 'react'
-import './productDetails.less'
+import './ProductDetails.less'
 
 function ProductDetails(props) {
-  const { name, stock, sizes, price } = props
+  const { id, name, stock, sizes, price } = props
   const getSizesValue = (sizes) => {
     const [firstSize] = sizes
     const [lastSize] = [...sizes].reverse()
@@ -26,6 +26,10 @@ function ProductDetails(props) {
           <div className='sizes'>
             <div className='label'>Sizes</div>
             <div className='value'>{getSizesValue(sizes)}</div>
+          </div>
+          <div className='id'>
+            <div className='label'>ID</div>
+            <div className='value'>{id}</div>
           </div>
         </div>
       </div>

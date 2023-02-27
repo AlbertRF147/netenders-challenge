@@ -1,3 +1,8 @@
+.custom-sizes {
+  max-height: 30vh;
+  overflow: scroll;
+}
+
 .customize-details {
   display: flex;
   justify-content: space-between;
@@ -21,8 +26,7 @@
     .price {
       display: flex;
       font-size: 20px;
-      &__label {
-      }
+
       &__currency {
         margin-left: 4px;
       }
@@ -50,8 +54,6 @@
     &__label {
       margin: 0;
     }
-    &__quantity {
-    }
   }
 }
 
@@ -62,9 +64,27 @@
   border: 0;
   background: none;
   width: 100%;
-  padding: 20px;
+  padding: var(--padding-button-bottom);
   font-size: 18px;
   background-color: var(--color-blue-button);
   color: white;
   font-weight: bold;
+
+  .overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: white;
+  }
+}
+
+.close {
+  color: gray;
+  font-size: 25px;
+  float: right;
+  position: absolute;
+  top: 6px;
+  right: 18px;
 }

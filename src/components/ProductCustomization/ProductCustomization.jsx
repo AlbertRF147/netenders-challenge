@@ -1,11 +1,15 @@
+import { faClose } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import React, { useEffect, useState } from 'react'
-import CustomizeSizeRow from '../CustomizeSizeRow'
-import './styles.less'
+import { useNavigate } from 'react-router-dom'
+import CustomizeSizeRow from '../CustomizeSizeRow/CustomizeSizeRow.jsx'
+import './ProductCustomization.less'
 
 function ProductCustomization(props) {
   const { id, selectedColorName, sizes, name, image, price } = props
   const [customSize, setCustomSize] = useState({})
   const [total, setTotal] = useState(0)
+  const navigate = useNavigate()
 
   useEffect(() => {
     setTotal(() =>
@@ -14,37 +18,44 @@ function ProductCustomization(props) {
   }, [customSize, setTotal])
 
   const handleOnAddToCart = async () => {
-    const res = await fetch('http://www.example.com/jsonservice', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        product: {
-          id,
-          color_name: selectedColorName,
+    if (id && selectedColorName && customSize.quantity && customSize.size) {
+      const res = await fetch('http://www.example.com/jsonservice', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
         },
-        custom_product: {
-          quantity: customSize.quantity,
-          size: customSize.size,
-        },
-      }),
-    })
-    return await res.json()
+        body: JSON.stringify({
+          product: {
+            id,
+            color_name: selectedColorName,
+          },
+          custom_product: {
+            quantity: customSize.quantity,
+            size: customSize.size,
+          },
+        }),
+      })
+      return await res.json()
+    }
   }
 
   return (
     <div>
+      <div className='close' onClick={() => navigate(-1)}>
+        <FontAwesomeIcon icon={faClose} />
+      </div>
       <h3>Select a size and quantity:</h3>
-      {sizes.map((size, index) => (
-        <CustomizeSizeRow
-          key={size}
-          size={size}
-          customSize={customSize}
-          setCustomSize={setCustomSize}
-          isLast={index === sizes.length - 1}
-        />
-      ))}
+      <div className='custom-sizes'>
+        {sizes.map((size, index) => (
+          <CustomizeSizeRow
+            key={size}
+            size={size}
+            customSize={customSize}
+            setCustomSize={setCustomSize}
+            isLast={index === sizes.length - 1}
+          />
+        ))}
+      </div>
       <hr />
       <div className='customize-details'>
         <img src={image} alt='Product image' />
@@ -67,11 +78,9 @@ function ProductCustomization(props) {
           <div className='total__quantity'>{total}</div>
         </div>
       </div>
-      <button
-        className={`add-to-cart ${!total ? 'disabled' : ''}`}
-        onClick={handleOnAddToCart}
-      >
+      <button className='add-to-cart' onClick={handleOnAddToCart}>
         Add to cart
+        {!total ? <div className='overlay disabled' /> : ''}
       </button>
     </div>
   )

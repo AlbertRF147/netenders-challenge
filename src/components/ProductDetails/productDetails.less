@@ -27,17 +27,21 @@
 
     .right {
       .stock,
-      .sizes {
+      .sizes,
+      .id {
         display: flex;
         font-size: 18px;
         color: var(--color-dark-light);
+        justify-content: space-between;
+        align-items: baseline;
 
         .label {
           font-weight: 500;
+          font-size: 16px;
         }
 
         .value {
-          margin-left: 5px;
+          margin-left: 10px;
         }
       }
     }
@@ -45,9 +49,5 @@
     & > div {
       display: flex;
     }
-  }
-
-  &__stock,
-  &__sizes {
   }
 }

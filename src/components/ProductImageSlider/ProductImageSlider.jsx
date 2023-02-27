@@ -1,5 +1,5 @@
 import React from 'react'
-import './productImageSlider.less'
+import './ProductImageSlider.less'
 
 function ProductImageSlider(props) {
   const { image } = props

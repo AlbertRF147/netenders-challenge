@@ -1,7 +1,6 @@
 .product-colors {
   border: 1px solid lightgrey;
   border-radius: 6px;
-  margin-bottom: 20px;
 
   &__dropdown {
     display: flex;
@@ -27,6 +26,9 @@
   }
 
   &__list {
+    max-height: 100px;
+    overflow: scroll;
+
     .color {
       display: flex;
       align-items: center;

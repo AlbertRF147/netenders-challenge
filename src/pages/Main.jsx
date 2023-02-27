@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import Page from '../components/Page'
+import Page from '../components/Page/Page.jsx'
 
 function Main() {
   return (

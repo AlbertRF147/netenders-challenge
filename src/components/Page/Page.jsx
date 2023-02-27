@@ -1,5 +1,5 @@
 import React from 'react'
-import './page.less'
+import './Page.less'
 
 function Page(props) {
   return <div className='page'>{props.children}</div>
